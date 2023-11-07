@@ -39,7 +39,23 @@ public class BookRepositoryMySQL implements BookRepository{
 
     @Override
     public Optional<Book> findById(Long id) {
-        return Optional.empty();
+        String sql = "SELECT * FROM book WHERE id = ?;";
+
+        try{
+            PreparedStatement preparedStatement = connection.prepareStatement(sql);
+            preparedStatement.setLong(1, id);
+            ResultSet resultSet = preparedStatement.executeQuery();
+
+            if (resultSet.next()) {
+                Book book = getBookFromResultSet(resultSet);
+                return Optional.of(book);
+            } else {
+                return Optional.empty();
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return Optional.empty();
+        }
     }
 
     /**
@@ -63,16 +79,13 @@ public class BookRepositoryMySQL implements BookRepository{
     public boolean save(Book book) {
         String sql = "INSERT INTO book VALUES(null, ?, ?, ?);";
 
-//        String newSql = "INSERT INTO book VALUES(null, \'" + book.getAuthor() +"\', \'"+ book.getTitle()+"\', null );";
-
-
-
+        //String newSql = "INSERT INTO book VALUES(null, \'" + book.getAuthor() +"\', \'"+ book.getTitle()+"\', null );";
 
 
         try{
-//            Statement statement = connection.createStatement();
-//            statement.executeUpdate(newSql);
-//            return true;
+            //Statement statement = connection.createStatement();
+            //statement.executeUpdate(newSql);
+            //return true;
 
             PreparedStatement preparedStatement = connection.prepareStatement(sql);
             preparedStatement.setString(1, book.getAuthor());
@@ -92,7 +105,13 @@ public class BookRepositoryMySQL implements BookRepository{
 
     @Override
     public void removeAll() {
-
+        String sql = "DELETE FROM book;";
+        try{
+            PreparedStatement preparedStatement = connection.prepareStatement(sql);
+            preparedStatement.executeUpdate();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
     }
 
 

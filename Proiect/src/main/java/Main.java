@@ -28,6 +28,10 @@ public class Main {
 
         System.out.println(bookRepository.findAll());
 
+        System.out.println(bookRepository.findById(Long.valueOf(1)));
+        System.out.println(bookRepository.findById(Long.valueOf(100)));
+
+        bookRepository.removeAll();
 
     }
 }
