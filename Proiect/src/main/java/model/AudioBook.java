@@ -2,13 +2,12 @@ package model;
 
 import java.time.LocalDate;
 
-public class Book {
+public class AudioBook {
     private Long id;
     private String author;
-
     private String title;
-
     private LocalDate publishedDate;
+    private int runTime;
 
     public Long getId() {
         return id;
@@ -40,6 +39,13 @@ public class Book {
 
     public void setPublishedDate(LocalDate publishedDate) {
         this.publishedDate = publishedDate;
+    }
+    public int getRunTime() {
+        return runTime;
+    }
+
+    public void setRunTime(int runTime) {
+        this.runTime = runTime;
     }
     @Override
     public String toString(){

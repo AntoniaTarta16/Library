@@ -1,19 +1,13 @@
 import database.JDBConnectionWrapper;
 import model.builder.BookBuilder;
-import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import repository.BookRepository;
 import repository.BookRepositoryMySQL;
 
-import model.Book;
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.SQLException;
 import java.time.LocalDate;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class BookRepositoryMySQLTest {
 

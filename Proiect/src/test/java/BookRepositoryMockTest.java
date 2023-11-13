@@ -1,9 +1,9 @@
+import model.Book;
 import model.builder.BookBuilder;
 import org.junit.jupiter.api.Test;
 import repository.BookRepository;
 import repository.BookRepositoryMock;
 
-import model.Book;
 import java.time.LocalDate;
 import java.util.List;
 import java.util.Optional;

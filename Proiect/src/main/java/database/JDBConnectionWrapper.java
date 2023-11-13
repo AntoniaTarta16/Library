@@ -25,7 +25,7 @@ public class JDBConnectionWrapper {
         }
     }
 
-    public boolean TestConnection() throws SQLException {
+    public boolean testConnection() throws SQLException {
         return connection.isValid(TIMEOUT);
     }
 
@@ -47,6 +47,4 @@ public class JDBConnectionWrapper {
 
         statement.execute(sql);
     }
-
-
 }
