@@ -4,7 +4,72 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e358f3c8-cedc-472e-8120-dae86dfc299a" name="Changes" comment="" />
+    <list default="true" id="e358f3c8-cedc-472e-8120-dae86dfc299a" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/controller/LoginController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/database/Bootstrap.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/database/Constants.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/database/SQLTableCreationFactory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/model/Right.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/model/Role.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/model/User.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/model/builder/UserBuilder.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/model/validator/UserValidator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/repository/security/RightsRolesRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/repository/security/RightsRolesRepositoryMySQL.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/repository/user/UserRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/repository/user/UserRepositoryMySQL.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/service/user/AuthenticationService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/service/user/AuthenticationServiceMySQL.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/view/LoginView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/7.5.1/checksums/checksums.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.5.1/checksums/checksums.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/7.5.1/checksums/md5-checksums.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.5.1/checksums/md5-checksums.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/7.5.1/checksums/sha1-checksums.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.5.1/checksums/sha1-checksums.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/7.5.1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.5.1/executionHistory/executionHistory.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/7.5.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.5.1/executionHistory/executionHistory.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/7.5.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.5.1/fileHashes/fileHashes.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/7.5.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.5.1/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/7.5.1/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.5.1/fileHashes/resourceHashesCache.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/file-system.probe" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/file-system.probe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/workspace-id.txt.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/workspace-id.txt.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/database/JDBConnectionWrapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/database/JDBConnectionWrapper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/model/Book.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/model/Book.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/model/builder/BookBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/model/builder/BookBuilder.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/repository/BookRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/repository/BookRepositoryCacheDecorator.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/repository/BookRepositoryDecorator.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/repository/BookRepositoryMock.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/repository/BookRepositoryMySQL.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/repository/Cache.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/service/BookService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/service/BookServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/previous-compilation-data.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/tmp/compileJava/previous-compilation-data.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/database/JDBConnectionWrapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/database/JDBConnectionWrapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/AudioBook.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/Book.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Book.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/EBook.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/builder/AudioBookBuilder.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/builder/BookBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/builder/BookBuilder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/builder/EBookBuilder.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/repository/BookRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/repository/book/BookRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/repository/BookRepositoryCacheDecorator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/repository/book/BookRepositoryCacheDecorator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/repository/BookRepositoryDecorator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/repository/book/BookRepositoryDecorator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/repository/BookRepositoryMock.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/repository/book/BookRepositoryMock.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/repository/BookRepositoryMySQL.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/repository/book/BookRepositoryMySQL.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/repository/Cache.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/repository/book/Cache.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/repository/EBookRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/repository/EBookRepositoryMock.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/repository/EBookRepositoryMySQL.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/service/BookService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/service/book/BookService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/service/BookServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/service/book/BookServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/BookRepositoryMockTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/BookRepositoryMockTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/BookRepositoryMySQLTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/BookRepositoryMySQLTest.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -14,6 +79,37 @@
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
     </projectState>
+  </component>
+  <component name="ExternalProjectsManager">
+    <system id="GRADLE">
+      <state>
+        <task path="$PROJECT_DIR$">
+          <activation />
+        </task>
+        <projects_view>
+          <tree_state>
+            <expand>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="Proiect" type="f1a62948:ProjectNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="Proiect" type="f1a62948:ProjectNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="Proiect" type="f1a62948:ProjectNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+                <item name="application" type="c8890929:TasksNode$1" />
+              </path>
+            </expand>
+            <select />
+          </tree_state>
+        </projects_view>
+      </state>
+    </system>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -34,18 +130,46 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "last_opened_file_path": "C:/Users/Anto/Desktop/IS/LabProject/Proiect",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0",
-    "settings.editor.selected.configurable": "preferences.pluginManager"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Anto/Desktop/IS/LabProject/Proiect&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
   }
-}]]></component>
+}</component>
+  <component name="RunManager">
+    <configuration name="Proiect [run]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="run" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Gradle.Proiect [run]" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -67,5 +191,15 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="java.lang.NullPointerException" package="java.lang" />
+          <option name="timeStamp" value="1" />
+        </breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

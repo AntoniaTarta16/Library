@@ -5,7 +5,26 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bb295b04-fb91-46ed-86f2-5160c5f1967b" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Proiect/build/classes/java/main/model/AudioBook.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Proiect/build/classes/java/main/model/EBook.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Proiect/build/classes/java/main/model/builder/AudioBookBuilder.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Proiect/build/classes/java/main/model/builder/EBookBuilder.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Proiect/build/classes/java/main/repository/EBookRepository.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Proiect/build/classes/java/main/repository/EBookRepositoryMock.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Proiect/build/classes/java/main/repository/EBookRepositoryMySQL.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Proiect/.gradle/7.5.1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/Proiect/.gradle/7.5.1/executionHistory/executionHistory.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Proiect/.gradle/7.5.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/Proiect/.gradle/7.5.1/executionHistory/executionHistory.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Proiect/.gradle/7.5.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/Proiect/.gradle/7.5.1/fileHashes/fileHashes.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Proiect/.gradle/7.5.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/Proiect/.gradle/7.5.1/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Proiect/.gradle/7.5.1/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/Proiect/.gradle/7.5.1/fileHashes/resourceHashesCache.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Proiect/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/Proiect/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Proiect/.gradle/file-system.probe" beforeDir="false" afterPath="$PROJECT_DIR$/Proiect/.gradle/file-system.probe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Proiect/.gradle/workspace-id.txt.lock" beforeDir="false" afterPath="$PROJECT_DIR$/Proiect/.gradle/workspace-id.txt.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Proiect/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Proiect/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Proiect/build/classes/java/main/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/Proiect/build/classes/java/main/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Proiect/build/classes/java/main/model/Book.class" beforeDir="false" afterPath="$PROJECT_DIR$/Proiect/build/classes/java/main/model/Book.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Proiect/build/tmp/compileJava/previous-compilation-data.bin" beforeDir="false" afterPath="$PROJECT_DIR$/Proiect/build/tmp/compileJava/previous-compilation-data.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Proiect/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/Proiect/src/main/java/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

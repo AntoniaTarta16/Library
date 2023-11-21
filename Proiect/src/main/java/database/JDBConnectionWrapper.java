@@ -7,7 +7,7 @@ import java.sql.Statement;
 
 public class JDBConnectionWrapper {
     private static final String JDBC_DRIVER= "com.mysql.cj.jdbc.Driver";
-    private static final String  DB_URL= "jdbc:mysql://localhost/";
+    private static final String  DB_URL= "jdbc:mysql://localhost/"; // 127.0.0.1
     private static final String USER="root";
     private static final String PASSWORD="facultate123";
     private static final int TIMEOUT=5;
@@ -20,7 +20,11 @@ public class JDBConnectionWrapper {
             connection= DriverManager.getConnection(DB_URL+ schema, USER, PASSWORD);
             createTable();
         }
-        catch (ClassNotFoundException | SQLException e ) {
+        catch (ClassNotFoundException e)
+        {
+            e.printStackTrace();
+        }
+        catch (SQLException e){
             e.printStackTrace();
         }
     }

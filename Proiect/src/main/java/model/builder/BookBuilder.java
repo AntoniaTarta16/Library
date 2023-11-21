@@ -3,9 +3,13 @@ package model.builder;
 import model.Book;
 
 import java.time.LocalDate;
+import java.util.Date;
 
 public class BookBuilder {
+
     private Book book;
+
+
     public BookBuilder(){
         book = new Book();
     }
@@ -19,6 +23,7 @@ public class BookBuilder {
         book.setAuthor(author);
         return this;
     }
+
     public BookBuilder setTitle(String title){
         book.setTitle(title);
         return this;
@@ -29,8 +34,8 @@ public class BookBuilder {
         return this;
     }
 
-    public Book build(){
+    public Book build()
+    {
         return book;
     }
-
 }

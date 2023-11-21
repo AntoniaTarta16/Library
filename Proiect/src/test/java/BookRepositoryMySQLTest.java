@@ -1,45 +1,81 @@
-import database.JDBConnectionWrapper;
+import database.DatabaseConnectionFactory;
+import model.Book;
 import model.builder.BookBuilder;
+import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import repository.BookRepository;
-import repository.BookRepositoryMySQL;
+import repository.book.BookRepository;
+import repository.book.BookRepositoryCacheDecorator;
+import repository.book.BookRepositoryMySQL;
+import repository.book.Cache;
 
 import java.time.LocalDate;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class BookRepositoryMySQLTest {
 
+    private static BookRepository bookRepository;
 
-    JDBConnectionWrapper connectionWrapper = new JDBConnectionWrapper("test_library");
+    @BeforeAll
+    public static void setupClass(){
+        bookRepository = new BookRepositoryCacheDecorator(
+                new BookRepositoryMySQL(
+                        DatabaseConnectionFactory.getConnectionWrapper(true).getConnection()
+                ),
+                new Cache<>()
+        );
+    }
 
-    BookRepository bookRepository = new BookRepositoryMySQL(connectionWrapper.getConnection());
-
+    @BeforeEach
+    public void cleanUp(){
+        bookRepository.removeAll();
+    }
 
     @Test
-    void testFindAll() {
+    public void findAll(){
+        List<Book> books = bookRepository.findAll();
+        assertEquals(0, books.size());
+    }
 
-        bookRepository.removeAll();
-
+    @Test
+    public void findAllWhenNotEmpty(){
         Book book = new BookBuilder()
-                .setAuthor("Author1")
-                .setTitle("Title1")
+                .setTitle("TitleTest")
+                .setAuthor("AuthorTest")
                 .setPublishedDate(LocalDate.of(2010, 6, 2))
                 .build();
 
         bookRepository.save(book);
-
-        Book book2 = new BookBuilder()
-                .setAuthor("Author2")
-                .setTitle("Title2")
-                .setPublishedDate(LocalDate.of(2008, 8, 16))
-                .build();
-
-        bookRepository.save(book2);
+        bookRepository.save(book);
+        bookRepository.save(book);
 
         List<Book> books = bookRepository.findAll();
-        assertEquals(books.size(), 2);
+
+        assertEquals(3, books.size());
+    }
+
+    @Test
+    public void findById(){
+
+    }
+
+    @Test
+    public void save(){
+        assertTrue(bookRepository.save(
+                new BookBuilder()
+                        .setTitle("TitleTest")
+                        .setAuthor("AuthorTest")
+                        .setPublishedDate(LocalDate.of(2010, 6, 2))
+                        .build()
+        ));
+    }
+
+    @Test
+    public void removeAll(){
+
     }
 
 }
