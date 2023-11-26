@@ -2,6 +2,8 @@ package model;
 
 import java.util.*;
 
+import static database.Constants.Roles.*;
+
 public class Role {
     private Long id;
     private String role;
@@ -35,5 +37,16 @@ public class Role {
 
     public void setRights(List<Right> rights) {
         this.rights = rights;
+    }
+
+    @Override
+    public String toString(){
+        if(role.equals(CUSTOMER)){
+            return CUSTOMER;
+        }
+        if(role.equals(EMPLOYEE)){
+            return EMPLOYEE;
+        }
+        return ADMINISTRATOR;
     }
 }

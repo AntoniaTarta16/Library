@@ -4,12 +4,8 @@ import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import model.User;
 import model.validator.Notification;
-import model.validator.UserValidator;
 import service.user.AuthenticationService;
 import view.LoginView;
-
-import java.util.EventListener;
-import java.util.List;
 
 public class LoginController {
 
@@ -36,8 +32,9 @@ public class LoginController {
 
             if (loginNotification.hasErrors()){
                 loginView.setActionTargetText(loginNotification.getFormattedErrors());
-            }else{
-                loginView.setActionTargetText("LogIn Successfull!");
+            }
+            else{
+                loginView.setActionTargetText("LogIn Successful!");
             }
 
         }
@@ -54,7 +51,8 @@ public class LoginController {
 
             if (registerNotification.hasErrors()) {
                 loginView.setActionTargetText(registerNotification.getFormattedErrors());
-            } else {
+            }
+            else {
                 loginView.setActionTargetText("Register successful!");
             }
         }

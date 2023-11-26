@@ -2,7 +2,6 @@ package repository.book;
 
 import model.Book;
 import model.builder.BookBuilder;
-
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -80,7 +79,7 @@ public class BookRepositoryMySQL implements BookRepository{
     public boolean save(Book book) {
         String sql = "INSERT INTO book VALUES(null, ?, ?, ?);";
 
-        String newSql = "INSERT INTO book VALUES(null, \'" + book.getAuthor() +"\', \'"+ book.getTitle()+"\', null );";
+        //String newSql = "INSERT INTO book VALUES(null, \'" + book.getAuthor() +"\', \'"+ book.getTitle()+"\', null );";
 
 
         try{

@@ -3,7 +3,6 @@ package repository.security;
 import model.Right;
 import model.Role;
 import model.User;
-
 import java.util.List;
 
 public interface RightsRolesRepository {

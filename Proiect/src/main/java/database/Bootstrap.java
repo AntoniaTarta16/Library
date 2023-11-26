@@ -50,7 +50,8 @@ public class Bootstrap {
             Arrays.stream(dropStatements).forEach(dropStatement -> {
                 try {
                     statement.execute(dropStatement);
-                } catch (SQLException e) {
+                }
+                catch (SQLException e) {
                     e.printStackTrace();
                 }
             });
@@ -64,7 +65,6 @@ public class Bootstrap {
 
         for (String schema : SCHEMAS) {
             System.out.println("Bootstrapping " + schema + " schema");
-
 
             JDBConnectionWrapper connectionWrapper = new JDBConnectionWrapper(schema);
             Connection connection = connectionWrapper.getConnection();
