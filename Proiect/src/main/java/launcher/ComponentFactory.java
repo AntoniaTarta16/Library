@@ -64,8 +64,10 @@ public class ComponentFactory {
         this.bookService = new BookServiceImpl(bookRepository);
 
         //this.userService = new UserServiceImpl(userRepository);
+
         //System.out.println(userService.findAll());
         //System.out.println(userRepository.existsByUsername("antoniartarta@yahoo.com"));
+
     }
 
     public AuthenticationService getAuthenticationService(){
