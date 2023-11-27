@@ -2,7 +2,6 @@ package repository.book;
 
 import model.Book;
 import model.builder.BookBuilder;
-
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -59,6 +58,28 @@ public class BookRepositoryMySQL implements BookRepository{
         return book;
     }
 
+    @Override
+    public Optional<Book> findByTitle(String title) {
+        String sql = "SELECT * FROM book WHERE title = ?";
+        Optional<Book> book = Optional.empty();
+
+        try{
+            PreparedStatement preparedStatement = connection.prepareStatement(sql);
+            preparedStatement.setString(1, title);
+
+            ResultSet resultSet = preparedStatement.executeQuery();
+
+            if (resultSet.next()){
+                book = Optional.of(getBookFromResultSet(resultSet));
+            }
+
+        }catch (SQLException e){
+            e.printStackTrace();
+        }
+
+        return book;
+    }
+
     /**
      *
      * How to reproduce a sql injection attack on insert statement
@@ -80,7 +101,7 @@ public class BookRepositoryMySQL implements BookRepository{
     public boolean save(Book book) {
         String sql = "INSERT INTO book VALUES(null, ?, ?, ?);";
 
-        String newSql = "INSERT INTO book VALUES(null, \'" + book.getAuthor() +"\', \'"+ book.getTitle()+"\', null );";
+        //String newSql = "INSERT INTO book VALUES(null, \'" + book.getAuthor() +"\', \'"+ book.getTitle()+"\', null );";
 
 
         try{
@@ -116,12 +137,33 @@ public class BookRepositoryMySQL implements BookRepository{
         }
     }
 
+    @Override
+    public boolean updateStock(Long bookId, int newStock) {
+        String sql = "UPDATE book SET stock = ? WHERE id = ?;";
+
+        try {
+            PreparedStatement preparedStatement = connection.prepareStatement(sql);
+            preparedStatement.setInt(1, newStock);
+            preparedStatement.setLong(2, bookId);
+
+            int rowsUpdated = preparedStatement.executeUpdate();
+
+            return rowsUpdated > 0;
+        }
+        catch (SQLException e) {
+            e.printStackTrace();
+            return false;
+        }
+    }
+
     private Book getBookFromResultSet(ResultSet resultSet) throws SQLException{
         return new BookBuilder()
                 .setId(resultSet.getLong("id"))
                 .setTitle(resultSet.getString("title"))
                 .setAuthor(resultSet.getString("author"))
                 .setPublishedDate(new java.sql.Date(resultSet.getDate("publishedDate").getTime()).toLocalDate())
+                .setStock(resultSet.getInt("stock"))
+                .setPrice(resultSet.getInt("price"))
                 .build();
     }
 }

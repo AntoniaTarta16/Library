@@ -42,4 +42,9 @@ public class User {
     public void setRoles(List<Role> roles) {
         this.roles = roles;
     }
+
+    @Override
+    public String toString(){
+        return String.format("Id: %d | Username: %s | Role: " + this.roles, this.id, this.username);
+    }
 }

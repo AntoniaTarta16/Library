@@ -16,6 +16,9 @@ public class Book{
 
     private LocalDate publishedDate;
 
+    private int stock;
+    private int price;
+
 
     public Long getId() {
         return id;
@@ -47,6 +50,22 @@ public class Book{
 
     public void setPublishedDate(LocalDate publishedDate) {
         this.publishedDate = publishedDate;
+    }
+
+    public int getStock() {
+        return stock;
+    }
+
+    public int getPrice() {
+        return price;
+    }
+
+    public void setPrice(int price) {
+        this.price = price;
+    }
+
+    public void setStock(int stock) {
+        this.stock = stock;
     }
 
     @Override

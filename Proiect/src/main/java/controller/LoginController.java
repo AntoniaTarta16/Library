@@ -2,24 +2,24 @@ package controller;
 
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
+import javafx.stage.Stage;
+import launcher.ComponentFactory;
 import model.User;
 import model.validator.Notification;
-import model.validator.UserValidator;
+import service.book.BookService;
 import service.user.AuthenticationService;
+import view.CustomerView;
 import view.LoginView;
-
-import java.util.EventListener;
-import java.util.List;
 
 public class LoginController {
 
     private final LoginView loginView;
-    private final AuthenticationService authenticationService;
+    private final ComponentFactory componentFactory;
 
 
-    public LoginController(LoginView loginView, AuthenticationService authenticationService) {
+    public LoginController(LoginView loginView, ComponentFactory componentFactory) {
         this.loginView = loginView;
-        this.authenticationService = authenticationService;
+        this.componentFactory = componentFactory;
 
         this.loginView.addLoginButtonListener(new LoginButtonListener());
         this.loginView.addRegisterButtonListener(new RegisterButtonListener());
@@ -32,12 +32,17 @@ public class LoginController {
             String username = loginView.getUsername();
             String password = loginView.getPassword();
 
-            Notification<User> loginNotification = authenticationService.login(username, password);
+            Notification<User> loginNotification = componentFactory.getAuthenticationService().login(username, password);
 
             if (loginNotification.hasErrors()){
                 loginView.setActionTargetText(loginNotification.getFormattedErrors());
-            }else{
-                loginView.setActionTargetText("LogIn Successfull!");
+            }
+            else{
+
+                Stage loginStage = (Stage) loginView.getScene().getWindow();
+                loginStage.close();
+                CustomerView customerView = new CustomerView(new Stage(), componentFactory);
+                CustomerController customerController = new CustomerController(customerView, componentFactory);
             }
 
         }
@@ -50,11 +55,12 @@ public class LoginController {
             String username = loginView.getUsername();
             String password = loginView.getPassword();
 
-            Notification<Boolean> registerNotification = authenticationService.register(username, password);
+            Notification<Boolean> registerNotification = componentFactory.getAuthenticationService().register(username, password);
 
             if (registerNotification.hasErrors()) {
                 loginView.setActionTargetText(registerNotification.getFormattedErrors());
-            } else {
+            }
+            else {
                 loginView.setActionTargetText("Register successful!");
             }
         }

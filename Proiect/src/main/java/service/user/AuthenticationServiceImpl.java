@@ -43,9 +43,17 @@ public class AuthenticationServiceImpl implements AuthenticationService {
         if (!userValid){
             userValidator.getErrors().forEach(userRegisterNotification::addError);
             userRegisterNotification.setResult(Boolean.FALSE);
-        } else {
-            user.setPassword(hashPassword(password));
-            userRegisterNotification.setResult(userRepository.save(user));
+        }
+        else {
+
+            if(!userRepository.existsByUsername(username)) {
+                user.setPassword(hashPassword(password));
+                return userRepository.save(user);
+            }
+            else{
+                userRegisterNotification.addError("This username is already used!");
+                userRegisterNotification.setResult(Boolean.FALSE);
+            }
         }
 
         return userRegisterNotification;

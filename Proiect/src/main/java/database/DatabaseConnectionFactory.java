@@ -7,7 +7,8 @@ public class DatabaseConnectionFactory {
     public static JDBConnectionWrapper getConnectionWrapper(boolean test){
         if(test){
             return new JDBConnectionWrapper(TEST_SCHEMA);
-        } else {
+        }
+        else {
             return new JDBConnectionWrapper(SCHEMA);
         }
     }

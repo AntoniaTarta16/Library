@@ -1,4 +1,5 @@
 package model.builder;
+
 import java.util.List;
 import model.Role;
 import model.User;

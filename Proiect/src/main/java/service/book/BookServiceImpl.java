@@ -26,8 +26,18 @@ public class BookServiceImpl implements BookService{
     }
 
     @Override
+    public Book findByTitle(String title) {
+        return bookRepository.findByTitle(title).orElseThrow(() -> new IllegalArgumentException("Book with title: %s not found".formatted(title)));
+    }
+
+    @Override
     public boolean save(Book book) {
         return bookRepository.save(book);
+    }
+
+    @Override
+    public boolean updateStock(Long id, int newStock) {
+        return bookRepository.updateStock(id, newStock);
     }
 
     @Override

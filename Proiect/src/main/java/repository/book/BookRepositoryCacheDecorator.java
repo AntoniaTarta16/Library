@@ -1,7 +1,6 @@
 package repository.book;
 
 import model.Book;
-
 import java.util.List;
 import java.util.Optional;
 
@@ -36,6 +35,23 @@ public class BookRepositoryCacheDecorator extends BookRepositoryDecorator{
         }
 
         return decoratedRepository.findById(id);
+    }
+
+    @Override
+    public boolean updateStock(Long id, int newStock){
+        return true;
+    }
+    @Override
+    public Optional<Book> findByTitle(String title) {
+
+        if (cache.hasResult()){
+            return cache.load()
+                    .stream()
+                    .filter(it -> it.getTitle().equals(title))
+                    .findFirst();
+        }
+
+        return decoratedRepository.findByTitle(title);
     }
 
     @Override
