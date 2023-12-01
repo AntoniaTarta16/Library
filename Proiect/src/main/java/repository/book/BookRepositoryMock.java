@@ -26,8 +26,20 @@ public class BookRepositoryMock implements BookRepository{
     }
 
     @Override
+    public Optional<Book> findByTitle(String title) {
+        return books.parallelStream()
+                .filter(it -> it.getTitle().equals(title))
+                .findFirst();
+    }
+
+    @Override
     public boolean save(Book book) {
         return books.add(book);
+    }
+
+    @Override
+    public boolean updateStock(Long id, int newStock) {
+        return true; /////////////////
     }
 
     @Override

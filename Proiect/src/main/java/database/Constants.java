@@ -7,13 +7,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import static database.Constants.Rights.BUY_BOOK;
-import static database.Constants.Rights.CREATE_BOOK;
-import static database.Constants.Rights.DELETE_BOOK;
-import static database.Constants.Rights.RETURN_BOOK;
-import static database.Constants.Rights.RIGHTS;
-import static database.Constants.Rights.SELL_BOOK;
-import static database.Constants.Rights.UPDATE_BOOK;
+import static database.Constants.Rights.*;
 import static database.Constants.Roles.ADMINISTRATOR;
 import static database.Constants.Roles.CUSTOMER;
 import static database.Constants.Roles.EMPLOYEE;
@@ -25,11 +19,12 @@ public class Constants {
         for (String role : ROLES) {
             rolesRights.put(role, new ArrayList<>());
         }
-        rolesRights.get(ADMINISTRATOR).addAll(Arrays.asList(RIGHTS));
+        rolesRights.get(ADMINISTRATOR).addAll(Arrays.asList(CREATE_USER, DELETE_USER, UPDATE_USER, CREATE_BOOK,
+                DELETE_BOOK, UPDATE_BOOK));
 
         rolesRights.get(EMPLOYEE).addAll(Arrays.asList(CREATE_BOOK, DELETE_BOOK, UPDATE_BOOK, SELL_BOOK));
 
-        rolesRights.get(CUSTOMER).addAll(Arrays.asList(SELL_BOOK, BUY_BOOK, RETURN_BOOK));
+        rolesRights.get(CUSTOMER).addAll(Arrays.asList(BUY_BOOK, RETURN_BOOK));
 
         return rolesRights;
     }
@@ -48,9 +43,10 @@ public class Constants {
         public static final String RIGHT = "right";
         public static final String ROLE_RIGHT = "role_right";
         public static final String USER_ROLE = "user_role";
+        public static final String ORDER = "order";
 
         public static final String[] ORDERED_TABLES_FOR_CREATION = new String[]{USER, ROLE, RIGHT, ROLE_RIGHT, USER_ROLE,
-                BOOK};
+                BOOK, ORDER};
     }
 
     public static class Roles {

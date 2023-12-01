@@ -18,6 +18,7 @@ import service.user.UserServiceImpl;
 import view.LoginView;
 
 import java.sql.Connection;
+import java.time.LocalDate;
 
 public class ComponentFactory {
     private final LoginView loginView;
@@ -59,15 +60,17 @@ public class ComponentFactory {
         this.userRepository = new UserRepositoryMySQL(connection, rightsRolesRepository);
         this.authenticationService = new AuthenticationServiceImpl(userRepository, rightsRolesRepository);
         this.loginView = new LoginView(stage);
-        this.loginController = new LoginController(loginView, authenticationService);
         this.bookRepository = new BookRepositoryMySQL(connection);
         this.bookService = new BookServiceImpl(bookRepository);
+        this.loginController = new LoginController(loginView, this);
 
         //this.userService = new UserServiceImpl(userRepository);
-
         //System.out.println(userService.findAll());
         //System.out.println(userRepository.existsByUsername("antoniartarta@yahoo.com"));
+    }
 
+    public BookService getBookService() {
+        return bookService;
     }
 
     public AuthenticationService getAuthenticationService(){

@@ -38,6 +38,23 @@ public class BookRepositoryCacheDecorator extends BookRepositoryDecorator{
     }
 
     @Override
+    public boolean updateStock(Long id, int newStock){
+        return true;
+    }
+    @Override
+    public Optional<Book> findByTitle(String title) {
+
+        if (cache.hasResult()){
+            return cache.load()
+                    .stream()
+                    .filter(it -> it.getTitle().equals(title))
+                    .findFirst();
+        }
+
+        return decoratedRepository.findByTitle(title);
+    }
+
+    @Override
     public boolean save(Book book) {
         cache.invalidateCache();
         return decoratedRepository.save(book);
