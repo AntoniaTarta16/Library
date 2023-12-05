@@ -48,6 +48,62 @@ public class UserRepositoryMySQL implements UserRepository {
         return users;
     }
 
+    @Override
+    public boolean updateUsername(Long id, String username) {
+        String sql = "UPDATE user SET username = ? WHERE id = ?;";
+
+        try {
+            PreparedStatement preparedStatement = connection.prepareStatement(sql);
+            preparedStatement.setString(1, username);
+            preparedStatement.setLong(2, id);
+
+            int rowsUpdated = preparedStatement.executeUpdate();
+
+            return rowsUpdated > 0;
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return false;
+        }
+    }
+
+
+    @Override
+    public boolean deleteUser(String username){
+        String sql = "DELETE FROM user WHERE username = ?";
+
+        try{
+            PreparedStatement preparedStatement = connection.prepareStatement(sql);
+            preparedStatement.setString(1, username);
+
+            int rowsDeleted = preparedStatement.executeUpdate();
+            return rowsDeleted > 0;
+        }
+        catch (SQLException e){
+            e.printStackTrace();
+            return false;
+        }
+    }
+
+    @Override
+    public boolean updateRole(Long id, String role){
+        String sql = "UPDATE user_role SET role_id=(SELECT id FROM role where role = ?) where user_id = ?";
+
+        try {
+            PreparedStatement preparedStatement = connection.prepareStatement(sql);
+            preparedStatement.setString(1,role);
+            preparedStatement.setLong(2, id);
+
+            int rowsUpdated = preparedStatement.executeUpdate();
+
+            return rowsUpdated > 0;
+        }
+        catch (SQLException e) {
+            e.printStackTrace();
+            return false;
+        }
+    }
+
+
     // SQL Injection Attacks should not work after fixing functions
     // Be careful that the last character in sql injection payload is an empty space
     // alexandru.ghiurutan95@gmail.com' and 1=1; --
@@ -124,6 +180,30 @@ public class UserRepositoryMySQL implements UserRepository {
             e.printStackTrace();
         }
 
+    }
+
+    @Override
+    public List<User> findEmployees(){
+        List<User> employees = new ArrayList<>();
+        try {
+            Statement statement = connection.createStatement();
+            String sql = "SELECT user.id, username FROM user, user_role, role WHERE user.id = user_role.id and user_role.role_id = role.id and role = \"employee\";";
+            ResultSet resultSet = statement.executeQuery(sql);
+
+            while (resultSet.next()) {
+                Long id = resultSet.getLong("id");
+                String username = resultSet.getString("username");
+                User user = new UserBuilder()
+                        .setId(id)
+                        .setUsername(username)
+                        .build();
+                employees.add(user);
+            }
+        }
+        catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return employees;
     }
 
     @Override

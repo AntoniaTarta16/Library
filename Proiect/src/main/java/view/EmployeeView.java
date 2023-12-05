@@ -38,6 +38,7 @@ public class EmployeeView {
     private Button updateButton;
     private Button sellButton;
     private Button reportButton;
+    private Button logoutButton;
 
     private EventHandler<CellEditEvent<Book, ?>> editEventHandler;
     private final ComponentFactory componentFactory;
@@ -50,7 +51,7 @@ public class EmployeeView {
         GridPane gridPane = new GridPane();
         initializeGridPane(gridPane);
 
-        scene = new Scene(gridPane, 900, 600);
+        scene = new Scene(gridPane, 1100, 600);
         primaryStage.setScene(scene);
         primaryStage.setResizable(false);
 
@@ -139,6 +140,7 @@ public class EmployeeView {
         updateButton = new Button("Update");
         sellButton = new Button("Sell");
         reportButton = new Button("Generate report");
+        logoutButton = new Button("Logout");
 
         HBox inputBox = new HBox();
         inputBox.setPadding(new Insets(10,10,10,10));
@@ -146,9 +148,9 @@ public class EmployeeView {
         inputBox.getChildren().addAll(titleInput, authorInput, publishedDateInput, stockInput, priceInput);
 
         HBox buttonBox = new HBox();
-        buttonBox.setPadding(new Insets(10, 10, 10, 50));
+        buttonBox.setPadding(new Insets(10, 10, 10, 10));
         buttonBox.setSpacing(110);
-        buttonBox.getChildren().addAll(addButton, deleteButton, updateButton, sellButton, reportButton);
+        buttonBox.getChildren().addAll(addButton, deleteButton, updateButton, sellButton, reportButton, logoutButton);
 
 
         gridPane.add(inputBox, 0, 5);
@@ -179,6 +181,10 @@ public class EmployeeView {
 
     public void addAddButtonListener(EventHandler<ActionEvent> addButtonListener) {
         addButton.setOnAction(addButtonListener);
+    }
+
+    public void addLogoutButtonListener(EventHandler<ActionEvent> logoutButtonListener) {
+        logoutButton.setOnAction(logoutButtonListener);
     }
 
 

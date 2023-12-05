@@ -33,7 +33,7 @@ public class RightsRolesRepositoryMySQL implements RightsRolesRepository {
             insertStatement.setString(1, role);
             insertStatement.executeUpdate();
         } catch (SQLException e) {
-
+            e.printStackTrace();
         }
     }
 
@@ -45,7 +45,7 @@ public class RightsRolesRepositoryMySQL implements RightsRolesRepository {
             insertStatement.setString(1, right);
             insertStatement.executeUpdate();
         } catch (SQLException e) {
-
+            e.printStackTrace();
         }
     }
 
@@ -112,7 +112,7 @@ public class RightsRolesRepositoryMySQL implements RightsRolesRepository {
                 insertUserRoleStatement.executeUpdate();
             }
         } catch (SQLException e) {
-
+            e.printStackTrace();
         }
     }
 
@@ -129,7 +129,7 @@ public class RightsRolesRepositoryMySQL implements RightsRolesRepository {
             }
             return roles;
         } catch (SQLException e) {
-
+            e.printStackTrace();
         }
         return null;
     }
@@ -143,7 +143,7 @@ public class RightsRolesRepositoryMySQL implements RightsRolesRepository {
             insertStatement.setLong(2, rightId);
             insertStatement.executeUpdate();
         } catch (SQLException e) {
-
+            e.printStackTrace();
         }
     }
 }

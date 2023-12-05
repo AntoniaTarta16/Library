@@ -7,6 +7,7 @@ import launcher.ComponentFactory;
 import model.Role;
 import model.User;
 import model.validator.Notification;
+import view.AdministratorView;
 import view.CustomerView;
 import view.EmployeeView;
 import view.LoginView;
@@ -60,8 +61,8 @@ public class LoginController {
                         EmployeeController employeeController = new EmployeeController(employeeView, componentFactory, userId);
                     }
                     else { //ADMINISTRATOR
-                        //CustomerView customerView = new CustomerView(new Stage(), componentFactory);
-                        //CustomerController customerController = new CustomerController(customerView, componentFactory);
+                        AdministratorView administratorView = new AdministratorView(new Stage(), componentFactory);
+                        AdministratorController administratorController = new AdministratorController(administratorView, componentFactory);
                     }
                 }
 

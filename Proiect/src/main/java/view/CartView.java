@@ -1,7 +1,6 @@
 package view;
 
 import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.geometry.Insets;
@@ -17,9 +16,6 @@ import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import model.Book;
 import model.CartItem;
-import service.book.BookService;
-
-import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -36,6 +32,8 @@ public class CartView {
     private Label totalLabel;
     private Button buyButton;
 
+    private Button logoutButton;
+
     public CartView(Stage primaryStage, List<Book> book, List<Integer> quantities) {
 
         this.books = book;
@@ -45,7 +43,7 @@ public class CartView {
         GridPane gridPane = new GridPane();
         initializeGridPane(gridPane);
 
-        scene = new Scene(gridPane, 900, 600);
+        scene = new Scene(gridPane, 1100, 600);
         primaryStage.setScene(scene);
         primaryStage.setResizable(false);
 
@@ -71,10 +69,11 @@ public class CartView {
 
     private void initializeFields(GridPane gridPane){
 
+        logoutButton = new Button("Logout");
         buyButton = new Button("Buy");
         HBox buyButtonHBox = new HBox(10);
         buyButtonHBox.setAlignment(Pos.BOTTOM_LEFT);
-        buyButtonHBox.getChildren().add(buyButton);
+        buyButtonHBox.getChildren().addAll(buyButton, logoutButton);
         gridPane.add(buyButtonHBox, 0, 6);
 
         totalLabel = new Label("Total: " + total);
@@ -126,5 +125,8 @@ public class CartView {
 
     public void addBuyButtonListener(EventHandler<ActionEvent> buyButtonListener) {
         buyButton.setOnAction(buyButtonListener);
+    }
+    public void addLogoutButtonListener(EventHandler<ActionEvent> logoutButtonListener) {
+        logoutButton.setOnAction(logoutButtonListener);
     }
 }

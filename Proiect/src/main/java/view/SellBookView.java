@@ -9,7 +9,6 @@ import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
-import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.text.Font;
@@ -40,7 +39,7 @@ public class SellBookView {
         GridPane gridPane = new GridPane();
         initializeGridPane(gridPane);
 
-        scene = new Scene(gridPane, 900, 600);
+        scene = new Scene(gridPane, 1100, 600);
         primaryStage.setScene(scene);
         primaryStage.setResizable(false);
 

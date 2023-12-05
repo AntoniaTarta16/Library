@@ -40,7 +40,7 @@ public class CustomerView {
         GridPane gridPane = new GridPane();
         initializeGridPane(gridPane);
 
-        scene = new Scene(gridPane, 900, 600);
+        scene = new Scene(gridPane, 1100, 600);
         primaryStage.setScene(scene);
         primaryStage.setResizable(false);
 

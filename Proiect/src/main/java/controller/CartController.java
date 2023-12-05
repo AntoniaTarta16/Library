@@ -7,11 +7,6 @@ import javafx.stage.Stage;
 import launcher.ComponentFactory;
 import model.Book;
 import model.CartItem;
-import model.Order;
-import model.User;
-import model.validator.Notification;
-import service.book.BookService;
-import service.user.AuthenticationService;
 import view.CartView;
 import view.CustomerView;
 import view.LoginView;
@@ -20,7 +15,6 @@ import java.util.List;
 
 public class CartController {
     private final CartView cartView;
-    private List<Order> orders;
     private final ComponentFactory componentFactory;
 
     public CartController(CartView cartView, ComponentFactory componentFactory) {
@@ -28,6 +22,7 @@ public class CartController {
         this.componentFactory = componentFactory;
 
         this.cartView.addBuyButtonListener(new BuyButtonListener());
+        this.cartView.addLogoutButtonListener(new LogoutButtonListener());
     }
 
     private class BuyButtonListener implements EventHandler<ActionEvent> {
@@ -36,12 +31,11 @@ public class CartController {
         public void handle(javafx.event.ActionEvent event) {
             List<CartItem> cartItems = cartView.getCartItems();
 
-            //////////////////////////////////
             if (cartItems.isEmpty()) {
                 return;
             }
-            /////////////////////////////////
 
+            /////////////////////////////////
             ///// create Order /////////////
             ///////////////////////////////
             for(CartItem cartItem : cartItems){
@@ -59,9 +53,21 @@ public class CartController {
         }
     }
 
+    private class LogoutButtonListener implements EventHandler<ActionEvent> {
+
+        @Override
+        public void handle(javafx.event.ActionEvent event) {
+
+            Stage loginStage = (Stage) cartView.getScene().getWindow();
+            loginStage.close();
+            LoginView loginView = new LoginView(new Stage());
+            LoginController loginController = new LoginController(loginView, componentFactory);
+        }
+    }
+
     private void showSuccessMessage(String message) {
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
-        alert.setTitle("Succes!");
+        alert.setTitle("Success!");
         alert.setHeaderText(null);
         alert.setContentText(message);
         alert.showAndWait();
