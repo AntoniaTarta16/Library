@@ -7,20 +7,13 @@ import javafx.stage.Stage;
 import launcher.ComponentFactory;
 import model.Book;
 import model.Order;
-import model.builder.BookBuilder;
 import model.builder.OrderBuilder;
-import view.CartView;
+import view.CustomerView;
+import view.EmployeeView;
 import view.SellBookView;
-
-import java.awt.event.MouseEvent;
-import java.time.LocalDate;
-import java.util.ArrayList;
-import java.util.List;
 
 public class SellBookController {
     private final SellBookView sellBookView;
-    private List<Book> books = new ArrayList<>();
-    private List<Integer> quantities = new ArrayList<>();
     private Book selectedBook = null;
     private int quantity = 0;
     private int total = 0;
@@ -86,6 +79,10 @@ public class SellBookController {
 
                 componentFactory.getBookService().updateStock(selectedBook.getId(), selectedBook.getStock() - quantity);
                 showSuccessMessage("Done!");
+                Stage loginStage = (Stage) sellBookView.getScene().getWindow();
+                loginStage.close();
+                EmployeeView employeeView = new EmployeeView(new Stage(), componentFactory);
+                EmployeeController employeeController = new EmployeeController(employeeView, componentFactory, userId);
             }
 
         }

@@ -5,8 +5,6 @@ import com.itextpdf.text.*;
 import com.itextpdf.text.Document;
 import com.itextpdf.text.DocumentException;
 import com.itextpdf.text.Paragraph;
-import com.itextpdf.text.pdf.PdfPCell;
-import com.itextpdf.text.pdf.PdfPTable;
 import com.itextpdf.text.pdf.PdfWriter;
 
 import java.io.FileNotFoundException;
@@ -23,6 +21,7 @@ import model.Book;
 import model.Order;
 import model.builder.BookBuilder;
 import view.EmployeeView;
+import view.LoginView;
 import view.SellBookView;
 
 import java.time.LocalDate;
@@ -49,6 +48,7 @@ public class EmployeeController {
         this.employeeView.addUpdateButtonListener(new UpdateButtonListener());
         this.employeeView.addSellButtonListener(new SellButtonListener());
         this.employeeView.addReportButtonListener(new ReportButtonListener());
+        this.employeeView.addLogoutButtonListener(new LogoutButtonListener());
 
         employeeView.setEditEventHandler(this::handleEdit);
     }
@@ -94,12 +94,6 @@ public class EmployeeController {
             }
 
             if (!failedToUpdateBooks.isEmpty()) {
-                for (Book failedBook : failedToUpdateBooks) {
-                    employeeView.getTableBooks().getItems().stream()
-                            .filter(book -> book.getId().equals(failedBook.getId()))
-                            .findFirst()
-                            .ifPresent(book -> {employeeView.getTableBooks().refresh();});
-                }
                 showMessage("Failed to update some books in the database!");
             }
             else {
@@ -190,6 +184,18 @@ public class EmployeeController {
         }
     }
 
+    private class LogoutButtonListener implements EventHandler<ActionEvent> {
+
+        @Override
+        public void handle(javafx.event.ActionEvent event) {
+
+            Stage loginStage = (Stage) employeeView.getScene().getWindow();
+            loginStage.close();
+            LoginView loginView = new LoginView(new Stage());
+            LoginController loginController = new LoginController(loginView, componentFactory);
+        }
+    }
+
     private class SellButtonListener implements EventHandler<ActionEvent> {
         @Override
         public void handle(javafx.event.ActionEvent event) {
@@ -215,8 +221,8 @@ public class EmployeeController {
                 if(!orders.isEmpty()) {
                     for (Order order : orders) {
                         document.add(new Paragraph(new Phrase("Book:" + componentFactory.getBookService().findById(order.getBookId()).getTitle()) + " " +
-                                "Quantity:" + String.valueOf(order.getQuantity()) + " " +
-                                "Total price:" + String.valueOf(order.getTotal())));
+                                "Quantity:" + order.getQuantity() + " " +
+                                "Total price:" + order.getTotal() ));
                     }
                 }
                 else{
@@ -227,7 +233,7 @@ public class EmployeeController {
             }
             catch (DocumentException | FileNotFoundException e) {
                 e.printStackTrace();
-                showMessage("Somethinq went wrong!");
+                showMessage("Something went wrong!");
             }
             finally {
                 document.close();

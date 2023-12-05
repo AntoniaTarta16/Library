@@ -1,12 +1,6 @@
 package model.builder;
 
-import model.Book;
-import model.CartItem;
 import model.Order;
-import model.User;
-
-import java.time.LocalDate;
-import java.util.ArrayList;
 
 public class OrderBuilder {
     private Order order;

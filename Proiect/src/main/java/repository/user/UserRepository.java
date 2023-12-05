@@ -19,4 +19,10 @@ public interface UserRepository {
 
     User findByUsername(String username);
     User findById(Long id);
+
+    List<User> findEmployees();
+
+    boolean updateUsername(Long id, String username);
+    boolean updateRole(Long id, String role);
+    boolean deleteUser(String username);
 }

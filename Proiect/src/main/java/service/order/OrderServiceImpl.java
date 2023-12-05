@@ -1,7 +1,6 @@
 package service.order;
 
 import model.Order;
-import model.User;
 import repository.order.OrderRepository;
 
 import java.util.List;

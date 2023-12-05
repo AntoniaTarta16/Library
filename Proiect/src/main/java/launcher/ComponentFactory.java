@@ -71,8 +71,6 @@ public class ComponentFactory {
         this.orderRepository = new OrderRepositoryMySQL(connection);
         this.orderService = new OrderServiceImpl(orderRepository);
 
-        //System.out.println(userService.findAll());
-        //System.out.println(userRepository.existsByUsername("antoniartarta@yahoo.com"));
     }
 
     public BookService getBookService() {
@@ -83,25 +81,6 @@ public class ComponentFactory {
         return authenticationService;
     }
 
-    public UserRepository getUserRepository(){
-        return userRepository;
-    }
-
-    public RightsRolesRepository getRightsRolesRepository(){
-        return rightsRolesRepository;
-    }
-
-    public LoginView getLoginView(){
-        return loginView;
-    }
-
-    public BookRepository getBookRepository(){
-        return bookRepository;
-    }
-
-    public LoginController getLoginController(){
-        return loginController;
-    }
     public UserService getUserService(){return userService; }
 
     public OrderService getOrderService() {

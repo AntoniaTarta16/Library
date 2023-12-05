@@ -1,8 +1,6 @@
 package repository.order;
 
-import model.Book;
 import model.Order;
-import model.builder.BookBuilder;
 import model.builder.OrderBuilder;
 
 import java.sql.*;
