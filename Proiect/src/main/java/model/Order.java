@@ -1,15 +1,11 @@
 package model;
 
-import java.time.LocalDate;
-import java.util.ArrayList;
-
 public class Order {
     private Long id;
-
-    private User user;
-
-    private User customer;
-    private ArrayList<CartItem> cartItems;
+    private Long userId;
+    private Long customerId;
+    private Long  bookId;
+    private int quantity;
     private int total;
 
     public Long getId() {
@@ -20,28 +16,36 @@ public class Order {
         this.id = id;
     }
 
-    public User getUser() {
-        return user;
+    public Long getUserId() {
+        return userId;
     }
 
-    public void setUser(User user) {
-        this.user = user;
+    public void setUserId(Long userId) {
+        this.userId = userId;
     }
 
-    public User getCustomer() {
-        return customer;
+    public Long getCustomerId() {
+        return customerId;
     }
 
-    public void setCustomer(User customer) {
-        this.customer = customer;
+    public void setCustomerId(Long customerId) {
+        this.customerId = customerId;
     }
 
-    public ArrayList<CartItem> getCartItems() {
-        return cartItems;
+    public Long getBookId() {
+        return bookId;
     }
 
-    public void setCartItems(ArrayList<CartItem> cartItems) {
-        this.cartItems = cartItems;
+    public void setBookId(Long bookId) {
+        this.bookId = bookId;
+    }
+
+    public int getQuantity() {
+        return quantity;
+    }
+
+    public void setQuantity(int quantity) {
+        this.quantity = quantity;
     }
 
     public int getTotal() {

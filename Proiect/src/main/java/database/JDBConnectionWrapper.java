@@ -41,7 +41,7 @@ public class JDBConnectionWrapper {
         Statement statement= connection.createStatement();
 
         String sql="CREATE TABLE IF NOT EXISTS book(" +
-                "id bigint NOT NULL AUTO_INCREMENT,"+
+                "id int(11) NOT NULL AUTO_INCREMENT,"+
                 "author varchar(500) NOT NULL," +
                 "title varchar(500) NOT NULL," +
                 "publishedDate datetime DEFAULT NULL,"+

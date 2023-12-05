@@ -42,6 +42,15 @@ public class BookRepositoryCacheDecorator extends BookRepositoryDecorator{
         return true;
     }
     @Override
+    public boolean updateBook(Book book){
+        return true;
+    }
+
+    @Override
+    public boolean deleteBookByTitleAndAuthor(Book book){
+        return true;
+    }
+    @Override
     public Optional<Book> findByTitle(String title) {
 
         if (cache.hasResult()){

@@ -6,14 +6,8 @@ import javafx.scene.control.Alert;
 import javafx.stage.Stage;
 import launcher.ComponentFactory;
 import model.Book;
-import model.CartItem;
-import model.User;
-import model.validator.Notification;
-import service.book.BookService;
-import service.user.AuthenticationService;
 import view.CartView;
 import view.CustomerView;
-import view.LoginView;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -50,44 +44,44 @@ public class CustomerController {
                     }
                 }
 
-                if(book.getStock() >= quantity) {
-                    if(!books.isEmpty()){
-                        for (int i = 0; i < books.size(); i++) {
+                if(book.getStock() == 0){
+                    showMessage("Unavailable item!");
 
-                            if((books.get(i)).getTitle().equals(titleBook)) {
-                                int oldQuantity = (quantities.get(i)).intValue();
-                                int newQuantity = oldQuantity + quantity;
-                                if(book.getStock() >= newQuantity){
-                                    quantities.set(i,Integer.valueOf(newQuantity));
+                }
+                else{
+                    if(book.getStock() >= quantity) {
+                        if(!books.isEmpty()){
+                            for (int i = 0; i < books.size(); i++) {
+
+                                if((books.get(i)).getTitle().equals(titleBook)) {
+                                    int oldQuantity = (quantities.get(i)).intValue();
+                                    int newQuantity = oldQuantity + quantity;
+                                    if(book.getStock() >= newQuantity){
+                                        quantities.set(i,Integer.valueOf(newQuantity));
+                                    }
+                                    else {
+                                        showMessage("Wrong quantity!");
+                                    }
+                                    break;
                                 }
-                                else {
-                                    showMessage("Wrong quantity!");
+                                else{
+                                    quantities.add(quantity);
+                                    books.add(book);
                                 }
-                                break;
                             }
-                            else{
-                                quantities.add(quantity);
-                                books.add(book);
-                            }
+                        }
+                        else{
+                            quantities.add(quantity);
+                            books.add(book);
                         }
                     }
                     else{
-                        quantities.add(quantity);
-                        books.add(book);
+                        showMessage("Wrong quantity!");
                     }
                 }
-                else{
-                    showMessage("Wrong quantity!");
-                }
-
-                /* afisare pt testare => e ok
-                for(Book b : books){
-
-                    System.out.println(b);
-                }
-                for(Integer q: quantities){
-                    System.out.println(q.intValue());
-                }*/
+            }
+            else{
+                showMessage("Choose a book!");
             }
         }
     }

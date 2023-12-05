@@ -4,17 +4,23 @@ import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.stage.Stage;
 import launcher.ComponentFactory;
+import model.Role;
 import model.User;
 import model.validator.Notification;
-import service.book.BookService;
-import service.user.AuthenticationService;
 import view.CustomerView;
+import view.EmployeeView;
 import view.LoginView;
+
+import java.util.List;
+
+import static database.Constants.Roles.CUSTOMER;
+import static database.Constants.Roles.EMPLOYEE;
 
 public class LoginController {
 
     private final LoginView loginView;
     private final ComponentFactory componentFactory;
+    private Long userId;
 
 
     public LoginController(LoginView loginView, ComponentFactory componentFactory) {
@@ -38,11 +44,28 @@ public class LoginController {
                 loginView.setActionTargetText(loginNotification.getFormattedErrors());
             }
             else{
+                userId = componentFactory.getUserService().findByUsername(username).getId();
 
                 Stage loginStage = (Stage) loginView.getScene().getWindow();
                 loginStage.close();
-                CustomerView customerView = new CustomerView(new Stage(), componentFactory);
-                CustomerController customerController = new CustomerController(customerView, componentFactory);
+
+                List<Role> roles = componentFactory.getUserService().findByUsername(username).getRoles();
+                for(Role role : roles){
+                    if(role.getRole().equals(CUSTOMER)){
+                        CustomerView customerView = new CustomerView(new Stage(), componentFactory);
+                        CustomerController customerController = new CustomerController(customerView, componentFactory);
+                    }
+                    else if(role.getRole().equals(EMPLOYEE)){
+                        EmployeeView employeeView = new EmployeeView(new Stage(), componentFactory);
+                        EmployeeController employeeController = new EmployeeController(employeeView, componentFactory, userId);
+                    }
+                    else { //ADMINISTRATOR
+                        //CustomerView customerView = new CustomerView(new Stage(), componentFactory);
+                        //CustomerController customerController = new CustomerController(customerView, componentFactory);
+                    }
+                }
+
+
             }
 
         }
@@ -65,4 +88,5 @@ public class LoginController {
             }
         }
     }
+
 }

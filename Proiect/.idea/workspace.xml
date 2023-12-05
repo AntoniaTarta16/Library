@@ -5,13 +5,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e358f3c8-cedc-472e-8120-dae86dfc299a" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/controller/CartController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/controller/CustomerController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/model/CartItem.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/model/Order.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/model/builder/OrderBuilder.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/view/CartView.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/view/CustomerView.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/controller/EmployeeController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/controller/SellBookController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/repository/order/OrderRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/repository/order/OrderRepositoryMySQL.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/service/order/OrderService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/service/order/OrderServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/view/EmployeeView.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/view/SellBookView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/7.5.1/checksums/checksums.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.5.1/checksums/checksums.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/7.5.1/checksums/md5-checksums.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.5.1/checksums/md5-checksums.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/7.5.1/checksums/sha1-checksums.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.5.1/checksums/sha1-checksums.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/7.5.1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.5.1/executionHistory/executionHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/7.5.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.5.1/executionHistory/executionHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/7.5.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.5.1/fileHashes/fileHashes.bin" afterDir="false" />
@@ -21,25 +25,20 @@
       <change beforePath="$PROJECT_DIR$/.gradle/file-system.probe" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/file-system.probe" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/workspace-id.txt.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/workspace-id.txt.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/controller/CustomerController$AddButtonListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/controller/CustomerController$AddButtonListener.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/controller/CustomerController$CartButtonListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/controller/CustomerController$CartButtonListener.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/controller/CustomerController.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/controller/CustomerController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/java/main/controller/LoginController$LoginButtonListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/controller/LoginController$LoginButtonListener.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/java/main/controller/LoginController$RegisterButtonListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/controller/LoginController$RegisterButtonListener.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/java/main/controller/LoginController.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/controller/LoginController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/java/main/database/Bootstrap.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/database/Bootstrap.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/database/Constants$Rights.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/database/Constants$Rights.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/database/Constants$Roles.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/database/Constants$Roles.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/database/Constants$Schemas.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/database/Constants$Schemas.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/java/main/database/Constants$Tables.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/database/Constants$Tables.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/database/Constants.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/database/Constants.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/database/DatabaseConnectionFactory.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/database/DatabaseConnectionFactory.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/java/main/database/JDBConnectionWrapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/database/JDBConnectionWrapper.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/java/main/database/SQLTableCreationFactory.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/database/SQLTableCreationFactory.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/java/main/launcher/ComponentFactory.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/launcher/ComponentFactory.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/model/Book.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/model/Book.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/model/Role.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/model/Role.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/model/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/model/User.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/model/builder/BookBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/model/builder/BookBuilder.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/model/builder/UserBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/model/builder/UserBuilder.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/model/validator/UserValidator.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/model/validator/UserValidator.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/model/Order.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/model/Order.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/model/builder/OrderBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/model/builder/OrderBuilder.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/java/main/repository/book/BookRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/repository/book/BookRepository.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/java/main/repository/book/BookRepositoryCacheDecorator.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/repository/book/BookRepositoryCacheDecorator.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/java/main/repository/book/BookRepositoryMock.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/repository/book/BookRepositoryMock.class" afterDir="false" />
@@ -48,32 +47,33 @@
       <change beforePath="$PROJECT_DIR$/build/classes/java/main/repository/user/UserRepositoryMySQL.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/repository/user/UserRepositoryMySQL.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/java/main/service/book/BookService.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/service/book/BookService.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/java/main/service/book/BookServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/service/book/BookServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/service/user/AuthenticationServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/service/user/AuthenticationServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/service/user/UserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/service/user/UserService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/service/user/UserServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/service/user/UserServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/view/CartView.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/view/CartView.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/view/CustomerView.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/view/CustomerView.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/java/main/view/LoginView.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/view/LoginView.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/previous-compilation-data.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/tmp/compileJava/previous-compilation-data.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/CustomerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/CustomerController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/controller/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/LoginController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/database/Bootstrap.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/database/Bootstrap.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/database/Constants.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/database/Constants.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/database/DatabaseConnectionFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/database/DatabaseConnectionFactory.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/database/JDBConnectionWrapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/database/JDBConnectionWrapper.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/database/SQLTableCreationFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/database/SQLTableCreationFactory.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/launcher/ComponentFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/launcher/ComponentFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/Book.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Book.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/Role.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Role.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/builder/BookBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/builder/BookBuilder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/builder/UserBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/builder/UserBuilder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/validator/UserValidator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/validator/UserValidator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/Order.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Order.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/builder/OrderBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/builder/OrderBuilder.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/repository/book/BookRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/repository/book/BookRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/repository/book/BookRepositoryCacheDecorator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/repository/book/BookRepositoryCacheDecorator.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/repository/book/BookRepositoryMock.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/repository/book/BookRepositoryMock.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/repository/book/BookRepositoryMySQL.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/repository/book/BookRepositoryMySQL.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/repository/security/RightsRolesRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/repository/security/RightsRolesRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/repository/user/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/repository/user/UserRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/repository/user/UserRepositoryMySQL.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/repository/user/UserRepositoryMySQL.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/service/book/BookService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/service/book/BookService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/service/book/BookServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/service/book/BookServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/service/user/AuthenticationServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/service/user/AuthenticationServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/service/user/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/service/user/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/service/user/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/service/user/UserServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/view/CartView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/CartView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/view/CustomerView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/CustomerView.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/view/LoginView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/LoginView.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -137,7 +137,20 @@
     &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
   }
 }</component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Gradle.Proiect [run]">
+    <configuration name="Bootstrap" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="database.Bootstrap" />
+      <module name="Proiect.main" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="database.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="Proiect [run]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -162,6 +175,7 @@
     <recent_temporary>
       <list>
         <item itemvalue="Gradle.Proiect [run]" />
+        <item itemvalue="Application.Bootstrap" />
       </list>
     </recent_temporary>
   </component>

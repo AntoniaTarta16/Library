@@ -13,15 +13,12 @@ import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
-import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
-import service.book.BookService;
 
 import java.time.LocalDate;
-import java.util.ArrayList;
 
 public class CustomerView {
     private Scene scene;
@@ -45,6 +42,7 @@ public class CustomerView {
 
         scene = new Scene(gridPane, 900, 600);
         primaryStage.setScene(scene);
+        primaryStage.setResizable(false);
 
         initializeSceneTitle(gridPane);
 
@@ -80,11 +78,11 @@ public class CustomerView {
         publishedDateBook.setMinWidth(200);
         publishedDateBook.setCellValueFactory(new PropertyValueFactory<>("publishedDate"));
 
-        TableColumn<Book, LocalDate> stockBook = new TableColumn<>("Stock");
+        TableColumn<Book, Integer> stockBook = new TableColumn<>("Stock");
         stockBook.setMinWidth(100);
         stockBook.setCellValueFactory(new PropertyValueFactory<>("stock"));
 
-        TableColumn<Book, LocalDate> priceBook = new TableColumn<>("Price");
+        TableColumn<Book, Integer> priceBook = new TableColumn<>("Price");
         priceBook.setMinWidth(100);
         priceBook.setCellValueFactory(new PropertyValueFactory<>("price"));
 

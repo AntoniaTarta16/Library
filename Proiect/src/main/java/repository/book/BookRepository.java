@@ -12,5 +12,9 @@ public interface BookRepository {
 
     void removeAll();
 
+    boolean deleteBookByTitleAndAuthor(Book book);
+
     boolean updateStock(Long id, int newStock);
+
+    boolean updateBook(Book book);
 }
