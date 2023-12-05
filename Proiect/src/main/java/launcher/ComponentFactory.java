@@ -5,12 +5,16 @@ import database.DatabaseConnectionFactory;
 import javafx.stage.Stage;
 import repository.book.BookRepository;
 import repository.book.BookRepositoryMySQL;
+import repository.order.OrderRepository;
+import repository.order.OrderRepositoryMySQL;
 import repository.security.RightsRolesRepository;
 import repository.security.RightsRolesRepositoryMySQL;
 import repository.user.UserRepository;
 import repository.user.UserRepositoryMySQL;
 import service.book.BookService;
 import service.book.BookServiceImpl;
+import service.order.OrderService;
+import service.order.OrderServiceImpl;
 import service.user.AuthenticationService;
 import service.user.AuthenticationServiceImpl;
 import service.user.UserService;
@@ -18,7 +22,6 @@ import service.user.UserServiceImpl;
 import view.LoginView;
 
 import java.sql.Connection;
-import java.time.LocalDate;
 
 public class ComponentFactory {
     private final LoginView loginView;
@@ -27,10 +30,11 @@ public class ComponentFactory {
     private final UserRepository userRepository;
     private final RightsRolesRepository rightsRolesRepository;
     private final BookRepository bookRepository;
-
     private final BookService bookService;
+    private final UserService userService;
+    private final OrderRepository orderRepository;
+    private final OrderService orderService;
 
-    //private final UserService userService;
 
     /*private static volatile ComponentFactory instance;
 
@@ -63,8 +67,10 @@ public class ComponentFactory {
         this.bookRepository = new BookRepositoryMySQL(connection);
         this.bookService = new BookServiceImpl(bookRepository);
         this.loginController = new LoginController(loginView, this);
+        this.userService = new UserServiceImpl(userRepository);
+        this.orderRepository = new OrderRepositoryMySQL(connection);
+        this.orderService = new OrderServiceImpl(orderRepository);
 
-        //this.userService = new UserServiceImpl(userRepository);
         //System.out.println(userService.findAll());
         //System.out.println(userRepository.existsByUsername("antoniartarta@yahoo.com"));
     }
@@ -96,5 +102,9 @@ public class ComponentFactory {
     public LoginController getLoginController(){
         return loginController;
     }
+    public UserService getUserService(){return userService; }
 
+    public OrderService getOrderService() {
+        return orderService;
+    }
 }

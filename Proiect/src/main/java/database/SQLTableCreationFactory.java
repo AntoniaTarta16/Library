@@ -1,11 +1,6 @@
 package database;
 
-import static database.Constants.Tables.BOOK;
-import static database.Constants.Tables.RIGHT;
-import static database.Constants.Tables.ROLE;
-import static database.Constants.Tables.ROLE_RIGHT;
-import static database.Constants.Tables.USER;
-import static database.Constants.Tables.USER_ROLE;
+import static database.Constants.Tables.*;
 
 public class SQLTableCreationFactory {
 
@@ -74,6 +69,30 @@ public class SQLTableCreationFactory {
                     "  CONSTRAINT role_fkid" +
                     "    FOREIGN KEY (role_id)" +
                     "    REFERENCES role (id)" +
+                    "    ON DELETE CASCADE" +
+                    "    ON UPDATE CASCADE);";
+            case ORDER -> "  CREATE TABLE IF NOT EXISTS _order (" +
+                    "  id INT NOT NULL AUTO_INCREMENT," +
+                    "  userId INT NOT NULL," +
+                    "  customerId INT NOT NULL," +
+                    "  bookId int(11) NOT NULL," +
+                    "  quantity INT NOT NULL," +
+                    "  total INT NOT NULL," +
+                    "  PRIMARY KEY (id)," +
+                    "  UNIQUE INDEX id_UNIQUE (id ASC)," +
+                    "  CONSTRAINT userOrd_fkid" +
+                    "    FOREIGN KEY (userId)" +
+                    "    REFERENCES user (id)" +
+                    "    ON DELETE CASCADE" +
+                    "    ON UPDATE CASCADE," +
+                    "  CONSTRAINT customer_fkid" +
+                    "    FOREIGN KEY (customerId)" +
+                    "    REFERENCES user (id)" +
+                    "    ON DELETE CASCADE" +
+                    "    ON UPDATE CASCADE," +
+                    "  CONSTRAINT book_fkid" +
+                    "    FOREIGN KEY (bookId)" +
+                    "    REFERENCES book (id)" +
                     "    ON DELETE CASCADE" +
                     "    ON UPDATE CASCADE);";
             default -> "";

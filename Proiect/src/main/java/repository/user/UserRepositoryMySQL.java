@@ -144,6 +144,46 @@ public class UserRepositoryMySQL implements UserRepository {
         }
     }
 
+    @Override
+    public User findByUsername(String username){
+        User user = null;
+        try {
+            PreparedStatement statement = connection
+                    .prepareStatement(   "Select * from `" + USER + "` where `username`= ?");
+            statement.setString(1, username);
+
+            ResultSet userResultSet = statement.executeQuery();
+            if (userResultSet.next())
+            {
+                 user = getUserFromResultSet(userResultSet);
+            }
+        }
+        catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return user;
+    }
+
+    @Override
+    public User findById(Long id){
+        User user = null;
+        try {
+            PreparedStatement statement = connection
+                    .prepareStatement(   "Select * from `" + USER + "` where `id`= ?");
+            statement.setLong(1, id);
+
+            ResultSet userResultSet = statement.executeQuery();
+            if (userResultSet.next())
+            {
+                user = getUserFromResultSet(userResultSet);
+            }
+        }
+        catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return user;
+    }
+
     private User getUserFromResultSet(ResultSet resultSet) throws SQLException{
         return new UserBuilder()
                 .setId(resultSet.getLong("id"))

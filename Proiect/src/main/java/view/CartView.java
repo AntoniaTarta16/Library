@@ -47,6 +47,7 @@ public class CartView {
 
         scene = new Scene(gridPane, 900, 600);
         primaryStage.setScene(scene);
+        primaryStage.setResizable(false);
 
         initializeSceneTitle(gridPane);
 
